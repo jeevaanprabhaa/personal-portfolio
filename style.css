@@ -284,6 +284,48 @@ body {
   color: #777;
 }
 
+.education-section {
+    padding: 60px 20px;
+    background-color: #f0f4f8;
+    font-family: 'Poppins', sans-serif;
+}
+
+.education-section .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.education-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.education-logo img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.education-details {
+    max-width: 500px;
+    color: #555;
+}
+
+.education-details h3 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.education-details p {
+    margin: 6px 0;
+    font-size: 1rem;
+}
 
 /* Projects Section */
 .projects-section {
