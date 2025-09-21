@@ -19,7 +19,7 @@ html {
 body {
   font-family: 'Poppins', sans-serif;
   background: #fff;
-  color: #111;
+  color: #080101;
   overflow-x: hidden;
   padding-top: 80px;
 }
@@ -52,13 +52,13 @@ body {
 
 .nav-links li a {
   text-decoration: none;
-  color: #111;
+  color: #100202;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 .nav-links li a:hover {
-  color: #7e826d;
+  color: #310101;
 }
 
 .menu-icon {
@@ -84,7 +84,7 @@ body {
 
 .hero-left .tagline {
   font-size: 14px;
-  color: #999;
+  color: #0c0000;
   margin-bottom: 20px;
   letter-spacing: 2px;
 }
@@ -93,11 +93,11 @@ body {
   font-size: clamp(2.2rem, 6vw, 3rem);
   font-weight: 700;
   margin-bottom: 30px;
-  color: #111;
+  color: #393f42;
 }
 
 .hero-left h1 span {
-  color: #a5a488;
+  color: #000000;
 }
 
 .buttons {
@@ -116,7 +116,7 @@ body {
 
 .btn.primary {
   background: #999;
-  color: #fff;
+  color: #dfdfdf;
 }
 
 .btn.outline {
@@ -148,7 +148,7 @@ body {
   right: 0;
   width: 120%;
   height: 100%;
-  background: #f0f0f0;
+  background: #ecf0f1;
   transform: skewX(-15deg);
   z-index: -1;
 }
@@ -326,6 +326,32 @@ body {
     margin: 6px 0;
     font-size: 1rem;
 }
+.education-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.education-block {
+    flex: 1 1 45%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.education-logo img {
+    max-width: 100px;
+    margin-bottom: 15px;
+}
+
+.status-badge {
+   
+    color: #3f3f3f;
+    padding: 20px;
+    border-radius: 15px;
+    font-weight: bold;
+}
 
 /* Projects Section */
 .projects-section {
@@ -411,6 +437,43 @@ body {
 .project-info a:hover {
   background: #000;
   color: #fff;
+}
+.services-section {
+  background-color: #f5f5f5;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section-title {
+  color: #3c3c7c; /* Deep Indigo */
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.service-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 30px;
+  max-width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: #008080; /* Teal accent */
+  margin-bottom: 15px;
 }
 
 /* Contact Section */
