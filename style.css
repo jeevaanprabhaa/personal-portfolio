@@ -84,7 +84,7 @@ body {
 
 .hero-left .tagline {
   font-size: 14px;
-  color: #0c0000;
+  color: #c2cbd3;
   margin-bottom: 20px;
   letter-spacing: 2px;
 }
@@ -93,11 +93,11 @@ body {
   font-size: clamp(2.2rem, 6vw, 3rem);
   font-weight: 700;
   margin-bottom: 30px;
-  color: #393f42;
+  color: #626263;
 }
 
 .hero-left h1 span {
-  color: #000000;
+  color: #19152a;
 }
 
 .buttons {
@@ -115,13 +115,13 @@ body {
 }
 
 .btn.primary {
-  background: #999;
-  color: #dfdfdf;
+  background: #000000;
+  color: #d2c6c6;
 }
 
 .btn.outline {
-  border: 2px solid #999;
-  color: #999;
+  border: 2px solid #706d6d;
+  color: #100202;
 }
 
 .hero-right {
