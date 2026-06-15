@@ -13,10 +13,9 @@ import CloseIcon from '@material-ui/icons/Close';
 import './Navbar.css';
 import { headerData } from '../../data/headerData';
 import { ThemeContext } from '../../contexts/ThemeContext';
-import { themes } from '../../data/themeData';
 
 function Navbar() {
-    const { theme, setTheme, setHandleDrawer } = useContext(ThemeContext);
+    const { theme, setHandleDrawer } = useContext(ThemeContext);
 
     const [open, setOpen] = useState(false);
 
@@ -28,12 +27,6 @@ function Navbar() {
     const handleDrawerClose = () => {
         setOpen(false);
         setHandleDrawer();
-    };
-
-    const isDark = theme === themes.dark;
-
-    const toggleTheme = () => {
-        setTheme(isDark ? themes.light : themes.dark);
     };
 
     const useStyles = makeStyles((t) => ({
@@ -144,47 +137,11 @@ function Navbar() {
                     {shortname(headerData.name)}
                 </h1>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', transform: 'translateY(-10px)' }}>
-                    <button
-                        onClick={toggleTheme}
-                        className='theme-toggle-btn'
-                        title={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-                        style={{
-                            background: 'transparent',
-                            border: `2px solid ${theme.primary}`,
-                            borderRadius: '20px',
-                            cursor: 'pointer',
-                            padding: '4px 14px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '7px',
-                            transition: 'all 0.3s',
-                        }}
-                    >
-                        <span style={{
-                            fontSize: '0.95rem',
-                            lineHeight: 1,
-                        }}>
-                            {isDark ? '☀️' : '🌙'}
-                        </span>
-                        <span style={{
-                            fontSize: '0.7rem',
-                            fontWeight: 700,
-                            color: theme.primary,
-                            fontFamily: 'var(--primaryFont)',
-                            letterSpacing: '0.08em',
-                            transition: 'color 0.3s',
-                        }}>
-                            {isDark ? 'LIGHT' : 'DARK'}
-                        </span>
-                    </button>
-
-                    <IoMenuSharp
-                        className={classes.navMenu}
-                        onClick={handleDrawerOpen}
-                        aria-label='Menu'
-                    />
-                </div>
+                <IoMenuSharp
+                    className={classes.navMenu}
+                    onClick={handleDrawerOpen}
+                    aria-label='Menu'
+                />
             </div>
             <Drawer
                 variant='temporary'
