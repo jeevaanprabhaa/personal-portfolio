@@ -30,29 +30,13 @@ function Navbar() {
     };
 
     const useStyles = makeStyles((t) => ({
-        navMenu: {
-            fontSize: '2.5rem',
-            color: theme.tertiary,
-            cursor: 'pointer',
-            transform: 'translateY(-10px)',
-            transition: 'color 0.3s',
-            '&:hover': {
-                color: theme.primary,
-            },
-            [t.breakpoints.down('sm')]: {
-                fontSize: '2.5rem',
-            },
-            [t.breakpoints.down('xs')]: {
-                fontSize: '2rem',
-            },
-        },
         MuiDrawer: {
             padding: '0em 1.8em',
             width: '14em',
-            fontFamily: ' var(--primaryFont)',
-            fontStyle: ' normal',
-            fontWeight: ' normal',
-            fontSize: ' 24px',
+            fontFamily: 'var(--primaryFont)',
+            fontStyle: 'normal',
+            fontWeight: 'normal',
+            fontSize: '24px',
             background: theme.secondary,
             overflow: 'hidden',
             borderTopRightRadius: '40px',
@@ -80,7 +64,7 @@ function Navbar() {
         },
         drawerItem: {
             margin: '2rem auto',
-            borderRadius: '78.8418px',
+            borderRadius: '78px',
             background: theme.secondary,
             color: theme.primary,
             width: '85%',
@@ -131,18 +115,46 @@ function Navbar() {
     };
 
     return (
-        <div className='navbar'>
+        <div className='navbar' style={{ backgroundColor: theme.secondary }}>
             <div className='navbar--container'>
-                <h1 style={{ color: theme.secondary }}>
+
+                <h1 className='navbar--logo' style={{ color: theme.tertiary }}>
                     {shortname(headerData.name)}
+                    <span className='navbar--logo-dot' style={{ color: theme.primary }}>.</span>
                 </h1>
 
+                <nav className='navbar--links'>
+                    <NavLink to='/#about' smooth={true} duration={2000} className='navbar--link' style={{ color: theme.tertiary }}>
+                        About
+                    </NavLink>
+                    <NavLink to='/#services' smooth={true} duration={2000} className='navbar--link' style={{ color: theme.tertiary }}>
+                        Services
+                    </NavLink>
+                    <NavLink to='/#resume' smooth={true} duration={2000} className='navbar--link' style={{ color: theme.tertiary }}>
+                        Resume
+                    </NavLink>
+                    <NavLink to='/#blog' smooth={true} duration={2000} className='navbar--link' style={{ color: theme.tertiary }}>
+                        Projects
+                    </NavLink>
+                </nav>
+
+                <NavLink to='/#contacts' smooth={true} duration={2000} className='navbar--cta'>
+                    <button
+                        className='navbar--cta-btn'
+                        style={{ backgroundColor: theme.tertiary, color: theme.secondary }}
+                    >
+                        Get in touch →
+                    </button>
+                </NavLink>
+
                 <IoMenuSharp
-                    className={classes.navMenu}
+                    className='navbar--hamburger'
+                    style={{ color: theme.tertiary }}
                     onClick={handleDrawerOpen}
                     aria-label='Menu'
                 />
             </div>
+
             <Drawer
                 variant='temporary'
                 onClose={(event, reason) => {
@@ -178,105 +190,50 @@ function Navbar() {
                 <div onClick={handleDrawerClose}>
                     <div className='navLink--container'>
                         <Fade left>
-                            <NavLink
-                                to='/'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
+                            <NavLink to='/' smooth={true} spy='true' duration={2000}>
                                 <div className={classes.drawerItem}>
-                                    <IoHomeSharp
-                                        className={classes.drawerIcon}
-                                    />
-                                    <span className={classes.drawerLinks}>
-                                        Home
-                                    </span>
+                                    <IoHomeSharp className={classes.drawerIcon} />
+                                    <span className={classes.drawerLinks}>Home</span>
                                 </div>
                             </NavLink>
                         </Fade>
-
                         <Fade left>
-                            <NavLink
-                                to='/#about'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
+                            <NavLink to='/#about' smooth={true} spy='true' duration={2000}>
                                 <div className={classes.drawerItem}>
                                     <FaUser className={classes.drawerIcon} />
-                                    <span className={classes.drawerLinks}>
-                                        About
-                                    </span>
+                                    <span className={classes.drawerLinks}>About</span>
                                 </div>
                             </NavLink>
                         </Fade>
-
                         <Fade left>
-                            <NavLink
-                                to='/#resume'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
+                            <NavLink to='/#resume' smooth={true} spy='true' duration={2000}>
                                 <div className={classes.drawerItem}>
-                                    <HiDocumentText
-                                        className={classes.drawerIcon}
-                                    />
-                                    <span className={classes.drawerLinks}>
-                                        Resume
-                                    </span>
+                                    <HiDocumentText className={classes.drawerIcon} />
+                                    <span className={classes.drawerLinks}>Resume</span>
                                 </div>
                             </NavLink>
                         </Fade>
-
                         <Fade left>
-                            <NavLink
-                                to='/#services'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
+                            <NavLink to='/#services' smooth={true} spy='true' duration={2000}>
                                 <div className={classes.drawerItem}>
-                                    <BsFillGearFill
-                                        className={classes.drawerIcon}
-                                    />
-                                    <span className={classes.drawerLinks}>
-                                        Services
-                                    </span>
+                                    <BsFillGearFill className={classes.drawerIcon} />
+                                    <span className={classes.drawerLinks}>Services</span>
                                 </div>
                             </NavLink>
                         </Fade>
-
                         <Fade left>
-                            <NavLink
-                                to='/#blog'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
+                            <NavLink to='/#blog' smooth={true} spy='true' duration={2000}>
                                 <div className={classes.drawerItem}>
-                                    <FaFolderOpen
-                                        className={classes.drawerIcon}
-                                    />
-                                    <span className={classes.drawerLinks}>
-                                        Blog
-                                    </span>
+                                    <FaFolderOpen className={classes.drawerIcon} />
+                                    <span className={classes.drawerLinks}>Projects</span>
                                 </div>
                             </NavLink>
                         </Fade>
-
                         <Fade left>
-                            <NavLink
-                                to='/#contacts'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
+                            <NavLink to='/#contacts' smooth={true} spy='true' duration={2000}>
                                 <div className={classes.drawerItem}>
                                     <MdPhone className={classes.drawerIcon} />
-                                    <span className={classes.drawerLinks}>
-                                        Contact
-                                    </span>
+                                    <span className={classes.drawerLinks}>Contact</span>
                                 </div>
                             </NavLink>
                         </Fade>
