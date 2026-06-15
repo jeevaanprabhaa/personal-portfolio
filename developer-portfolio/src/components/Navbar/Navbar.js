@@ -30,6 +30,22 @@ function Navbar() {
     };
 
     const useStyles = makeStyles((t) => ({
+        navMenu: {
+            fontSize: '2.5rem',
+            color: theme.tertiary,
+            cursor: 'pointer',
+            transform: 'translateY(-10px)',
+            transition: 'color 0.3s',
+            '&:hover': {
+                color: theme.primary,
+            },
+            [t.breakpoints.down('sm')]: {
+                fontSize: '2.5rem',
+            },
+            [t.breakpoints.down('xs')]: {
+                fontSize: '2rem',
+            },
+        },
         MuiDrawer: {
             padding: '0em 1.8em',
             width: '14em',
@@ -64,7 +80,7 @@ function Navbar() {
         },
         drawerItem: {
             margin: '2rem auto',
-            borderRadius: '78px',
+            borderRadius: '78.8418px',
             background: theme.secondary,
             color: theme.primary,
             width: '85%',
@@ -115,41 +131,14 @@ function Navbar() {
     };
 
     return (
-        <div className='navbar' style={{ backgroundColor: theme.secondary }}>
+        <div className='navbar'>
             <div className='navbar--container'>
-
-                <h1 className='navbar--logo' style={{ color: theme.tertiary }}>
+                <h1 style={{ color: theme.secondary }}>
                     {shortname(headerData.name)}
-                    <span className='navbar--logo-dot' style={{ color: theme.primary }}>.</span>
                 </h1>
 
-                <nav className='navbar--links'>
-                    <NavLink to='/#about' smooth={true} duration={2000} className='navbar--link' style={{ color: theme.tertiary }}>
-                        About
-                    </NavLink>
-                    <NavLink to='/#services' smooth={true} duration={2000} className='navbar--link' style={{ color: theme.tertiary }}>
-                        Services
-                    </NavLink>
-                    <NavLink to='/#resume' smooth={true} duration={2000} className='navbar--link' style={{ color: theme.tertiary }}>
-                        Resume
-                    </NavLink>
-                    <NavLink to='/#blog' smooth={true} duration={2000} className='navbar--link' style={{ color: theme.tertiary }}>
-                        Projects
-                    </NavLink>
-                </nav>
-
-                <NavLink to='/#contacts' smooth={true} duration={2000} className='navbar--cta'>
-                    <button
-                        className='navbar--cta-btn'
-                        style={{ backgroundColor: theme.tertiary, color: theme.secondary }}
-                    >
-                        Get in touch →
-                    </button>
-                </NavLink>
-
                 <IoMenuSharp
-                    className='navbar--hamburger'
-                    style={{ color: theme.tertiary }}
+                    className={classes.navMenu}
                     onClick={handleDrawerOpen}
                     aria-label='Menu'
                 />
@@ -225,7 +214,7 @@ function Navbar() {
                             <NavLink to='/#blog' smooth={true} spy='true' duration={2000}>
                                 <div className={classes.drawerItem}>
                                     <FaFolderOpen className={classes.drawerIcon} />
-                                    <span className={classes.drawerLinks}>Projects</span>
+                                    <span className={classes.drawerLinks}>Blog</span>
                                 </div>
                             </NavLink>
                         </Fade>

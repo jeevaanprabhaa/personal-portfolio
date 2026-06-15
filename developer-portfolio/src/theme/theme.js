@@ -31,24 +31,24 @@ export const professionalDark = {
 
 export const professionalLight = {
     type: 'light',
-    primary: '#2563EB',
-    primary400: '#3b7cf6',
-    primary600: '#1d4ed8',
-    primary80: '#2563EBcc',
-    primary50: '#2563EB80',
-    primary30: '#2563EB4d',
-    secondary: '#ffffff',
-    secondary70: '#ffffffb3',
-    secondary50: '#ffffff80',
+    primary: '#111111',
+    primary400: '#333333',
+    primary600: '#000000',
+    primary80: '#111111cc',
+    primary50: '#11111180',
+    primary30: '#1111114d',
+    secondary: '#f5f5f5',
+    secondary70: '#f5f5f5b3',
+    secondary50: '#f5f5f580',
     tertiary: '#111111',
     tertiary80: '#111111cc',
     tertiary70: '#111111b3',
     tertiary50: '#11111180',
-    aboutimg1: blueThemeboy,
-    aboutimg2: blueThemegirl,
-    eduimg: eduBlue,
-    expimg: expBlue,
-    contactsimg: contactsBlue
+    aboutimg1: bwThemeboy,
+    aboutimg2: bwThemegirl,
+    eduimg: eduBlack,
+    expimg: expBlack,
+    contactsimg: contactsBlack
 }
 
 
