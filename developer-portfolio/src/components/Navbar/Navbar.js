@@ -13,9 +13,10 @@ import CloseIcon from '@material-ui/icons/Close';
 import './Navbar.css';
 import { headerData } from '../../data/headerData';
 import { ThemeContext } from '../../contexts/ThemeContext';
+import { themes } from '../../data/themeData';
 
 function Navbar() {
-    const { theme, setHandleDrawer } = useContext(ThemeContext);
+    const { theme, setTheme, setHandleDrawer } = useContext(ThemeContext);
 
     const [open, setOpen] = useState(false);
 
@@ -27,6 +28,12 @@ function Navbar() {
     const handleDrawerClose = () => {
         setOpen(false);
         setHandleDrawer();
+    };
+
+    const isRedWhite = theme === themes.redWhite;
+
+    const toggleTheme = () => {
+        setTheme(isRedWhite ? themes.blackBlue : themes.redWhite);
     };
 
     const useStyles = makeStyles((t) => ({
@@ -137,11 +144,49 @@ function Navbar() {
                     {shortname(headerData.name)}
                 </h1>
 
-                <IoMenuSharp
-                    className={classes.navMenu}
-                    onClick={handleDrawerOpen}
-                    aria-label='Menu'
-                />
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', transform: 'translateY(-10px)' }}>
+                    <button
+                        onClick={toggleTheme}
+                        className='theme-toggle-btn'
+                        title={isRedWhite ? 'Switch to Black & Blue' : 'Switch to Red & White'}
+                        style={{
+                            background: 'transparent',
+                            border: `2px solid ${theme.tertiary}`,
+                            borderRadius: '20px',
+                            cursor: 'pointer',
+                            padding: '4px 12px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '6px',
+                            transition: 'border-color 0.3s',
+                        }}
+                    >
+                        <span style={{
+                            width: '12px',
+                            height: '12px',
+                            borderRadius: '50%',
+                            background: isRedWhite ? '#545fc4' : '#f03939',
+                            display: 'inline-block',
+                            transition: 'background 0.3s',
+                        }} />
+                        <span style={{
+                            fontSize: '0.75rem',
+                            fontWeight: 600,
+                            color: theme.tertiary,
+                            fontFamily: 'var(--primaryFont)',
+                            letterSpacing: '0.03em',
+                            transition: 'color 0.3s',
+                        }}>
+                            {isRedWhite ? 'DARK' : 'LIGHT'}
+                        </span>
+                    </button>
+
+                    <IoMenuSharp
+                        className={classes.navMenu}
+                        onClick={handleDrawerOpen}
+                        aria-label='Menu'
+                    />
+                </div>
             </div>
             <Drawer
                 variant='temporary'
