@@ -1,16 +1,11 @@
 /* eslint-disable */
-import { 
-    redThemeLight, blueThemeDark
-} from '../theme/theme'
-
+import { professionalDark, professionalLight } from '../theme/theme'
 
 export const themeData = {
-    theme: redThemeLight
+    theme: professionalDark
 }
 
 export const themes = {
-    redWhite: redThemeLight,
-    blackBlue: blueThemeDark,
+    dark: professionalDark,
+    light: professionalLight,
 }
-
-// Choose theme from above

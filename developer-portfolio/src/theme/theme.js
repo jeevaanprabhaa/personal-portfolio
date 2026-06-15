@@ -7,6 +7,50 @@ import {
     contactsRed,contactsYellow
 } from './images'
 
+export const professionalDark = {
+    type: 'dark',
+    primary: '#2563EB',
+    primary400: '#3b7cf6',
+    primary600: '#1d4ed8',
+    primary80: '#2563EBcc',
+    primary50: '#2563EB80',
+    primary30: '#2563EB4d',
+    secondary: '#0f172a',
+    secondary70: '#0f172ab3',
+    secondary50: '#0f172a80',
+    tertiary: '#f1f5f9',
+    tertiary80: '#f1f5f9cc',
+    tertiary70: '#f1f5f9b3',
+    tertiary50: '#f1f5f980',
+    aboutimg1: blueThemeboy,
+    aboutimg2: blueThemegirl,
+    eduimg: eduBlue,
+    expimg: expBlue,
+    contactsimg: contactsBlue
+}
+
+export const professionalLight = {
+    type: 'light',
+    primary: '#2563EB',
+    primary400: '#3b7cf6',
+    primary600: '#1d4ed8',
+    primary80: '#2563EBcc',
+    primary50: '#2563EB80',
+    primary30: '#2563EB4d',
+    secondary: '#f8fafc',
+    secondary70: '#f8fafcb3',
+    secondary50: '#f8fafc80',
+    tertiary: '#0f172a',
+    tertiary80: '#0f172acc',
+    tertiary70: '#0f172ab3',
+    tertiary50: '#0f172a80',
+    aboutimg1: blueThemeboy,
+    aboutimg2: blueThemegirl,
+    eduimg: eduBlue,
+    expimg: expBlue,
+    contactsimg: contactsBlue
+}
+
 
 export const greenThemeLight = {
     type: 'light',

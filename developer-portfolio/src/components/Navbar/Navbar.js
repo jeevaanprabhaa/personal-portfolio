@@ -30,10 +30,10 @@ function Navbar() {
         setHandleDrawer();
     };
 
-    const isRedWhite = theme === themes.redWhite;
+    const isDark = theme === themes.dark;
 
     const toggleTheme = () => {
-        setTheme(isRedWhite ? themes.blackBlue : themes.redWhite);
+        setTheme(isDark ? themes.light : themes.dark);
     };
 
     const useStyles = makeStyles((t) => ({
@@ -148,36 +148,34 @@ function Navbar() {
                     <button
                         onClick={toggleTheme}
                         className='theme-toggle-btn'
-                        title={isRedWhite ? 'Switch to Black & Blue' : 'Switch to Red & White'}
+                        title={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
                         style={{
                             background: 'transparent',
-                            border: `2px solid ${theme.tertiary}`,
+                            border: `2px solid ${theme.primary}`,
                             borderRadius: '20px',
                             cursor: 'pointer',
-                            padding: '4px 12px',
+                            padding: '4px 14px',
                             display: 'flex',
                             alignItems: 'center',
-                            gap: '6px',
-                            transition: 'border-color 0.3s',
+                            gap: '7px',
+                            transition: 'all 0.3s',
                         }}
                     >
                         <span style={{
-                            width: '12px',
-                            height: '12px',
-                            borderRadius: '50%',
-                            background: isRedWhite ? '#545fc4' : '#f03939',
-                            display: 'inline-block',
-                            transition: 'background 0.3s',
-                        }} />
+                            fontSize: '0.95rem',
+                            lineHeight: 1,
+                        }}>
+                            {isDark ? '☀️' : '🌙'}
+                        </span>
                         <span style={{
-                            fontSize: '0.75rem',
-                            fontWeight: 600,
-                            color: theme.tertiary,
+                            fontSize: '0.7rem',
+                            fontWeight: 700,
+                            color: theme.primary,
                             fontFamily: 'var(--primaryFont)',
-                            letterSpacing: '0.03em',
+                            letterSpacing: '0.08em',
                             transition: 'color 0.3s',
                         }}>
-                            {isRedWhite ? 'DARK' : 'LIGHT'}
+                            {isDark ? 'LIGHT' : 'DARK'}
                         </span>
                     </button>
 
