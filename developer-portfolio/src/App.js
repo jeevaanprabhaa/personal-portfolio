@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import { ThemeContext } from './contexts/ThemeContext';
 import { Main, BlogPage, ProjectPage } from './pages'
 import { BackToTop } from './components'
-import Intro from './components/Intro/Intro'
 import ScrollToTop from './utils/ScrollToTop'
 
 import './App.css'
@@ -19,7 +18,6 @@ function App() {
 
   return (
     <div className="app">
-      <Intro />
       <Router>
         <ScrollToTop/>
         <Switch>
