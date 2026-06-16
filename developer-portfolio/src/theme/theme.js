@@ -44,11 +44,11 @@ export const professionalLight = {
     tertiary80: '#0D0D0Dcc',
     tertiary70: '#0D0D0Db3',
     tertiary50: '#0D0D0D80',
-    aboutimg1: bwThemeboy,
-    aboutimg2: bwThemegirl,
-    eduimg: eduBlack,
-    expimg: expBlack,
-    contactsimg: contactsBlack
+    aboutimg1: redThemeboy,
+    aboutimg2: redThemegirl,
+    eduimg: eduRed,
+    expimg: expRed,
+    contactsimg: contactsRed
 }
 
 
