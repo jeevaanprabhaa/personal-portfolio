@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="app">
-      <Intro onComplete={() => setIntroPlayed(true)} />
+      <Intro />
       <Router>
         <ScrollToTop/>
         <Switch>
